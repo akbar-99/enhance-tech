@@ -47,11 +47,11 @@ const Footer = () => {
           <div>
             <h3 className="text-foreground font-semibold mb-6">Services</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Managed IT Services</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Cloud Solutions</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Cybersecurity</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Network Solutions</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">IT Consulting</a></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">Managed IT Services</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">Cloud Solutions</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">Cybersecurity</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">Network Solutions</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">IT Consulting</Link></li>
             </ul>
           </div>
 
