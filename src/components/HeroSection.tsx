@@ -1,29 +1,25 @@
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import techCamelMascot from "@/assets/tech-camel-mascot.png";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-32 overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center pt-24 pb-32 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: 'radial-gradient(circle, hsl(300 100% 65% / 0.3) 0%, transparent 70%)' }} />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: 'radial-gradient(circle, hsl(280 80% 55% / 0.3) 0%, transparent 70%)' }} />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{
+      background: 'radial-gradient(circle, hsl(300 100% 65% / 0.3) 0%, transparent 70%)'
+    }} />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{
+      background: 'radial-gradient(circle, hsl(280 80% 55% / 0.3) 0%, transparent 70%)'
+    }} />
       
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-primary/30 animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
-            }}
-          />
-        ))}
+        {[...Array(20)].map((_, i) => <div key={i} className="absolute w-2 h-2 rounded-full bg-primary/30 animate-pulse" style={{
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 3}s`,
+        animationDuration: `${2 + Math.random() * 3}s`
+      }} />)}
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -53,11 +49,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-end max-w-6xl mx-auto">
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
-              <img 
-                src={techCamelMascot} 
-                alt="Enhance Tech AI Mascot" 
-                className="w-full max-w-md animate-float drop-shadow-2xl"
-              />
+              <img alt="Enhance Tech AI Mascot" className="w-full max-w-md animate-float drop-shadow-2xl" src="/lovable-uploads/b5b273b2-84b6-48c2-ae8a-f55657e7d986.jpg" />
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full blur-3xl -z-10" />
             </div>
@@ -85,8 +77,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
