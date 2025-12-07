@@ -49,7 +49,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-end max-w-6xl mx-auto">
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
-              <img alt="Enhance Tech AI Mascot" className="w-full max-w-md animate-float drop-shadow-2xl" src="/lovable-uploads/b5b273b2-84b6-48c2-ae8a-f55657e7d986.jpg" />
+              <img alt="Enhance Tech AI Mascot" className="w-full max-w-md animate-float drop-shadow-2xl" src="/lovable-uploads/f2d5b9d6-9157-4702-aaad-3d50cd206edb.jpg" />
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full blur-3xl -z-10" />
             </div>
