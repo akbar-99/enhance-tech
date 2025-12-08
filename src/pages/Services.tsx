@@ -63,14 +63,25 @@ const Services = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
+        {/* Animated Background Blobs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute top-1/4 right-1/4 w-[450px] h-[450px] blob opacity-25"
+            style={{ background: 'hsl(280 80% 55% / 0.3)' }}
+          />
+          <div 
+            className="absolute bottom-1/3 left-1/3 w-[350px] h-[350px] blob opacity-20"
+            style={{ background: 'hsl(300 100% 65% / 0.3)', animationDelay: '-3s' }}
+          />
+        </div>
+        
         <div className="absolute inset-0 bg-grid opacity-20" />
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: 'radial-gradient(circle, hsl(280 80% 55% / 0.3) 0%, transparent 70%)' }} />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto fade-up">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-foreground">Our </span>
-              <span className="gradient-text">Services</span>
+              <span className="gradient-text neon-text">Services</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl">
               Comprehensive IT solutions designed to streamline your operations and accelerate your digital transformation.
@@ -82,15 +93,15 @@ const Services = () => {
       {/* Services Grid */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto stagger-children">
             {services.map((service, index) => (
               <div 
                 key={index} 
-                className="glass-card p-8 hover:scale-[1.02] transition-all duration-300 group"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="service-card p-8 shine fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start gap-6">
-                  <div className="icon-circle shrink-0 group-hover:animate-pulse">
+                  <div className="icon-circle shrink-0">
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
@@ -99,16 +110,16 @@ const Services = () => {
                     <div className="grid grid-cols-2 gap-2 mb-4">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" style={{ boxShadow: '0 0 8px hsl(300 100% 65% / 0.8)' }} />
                           {feature}
                         </div>
                       ))}
                     </div>
                     <Link 
                       to="/contact" 
-                      className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all duration-300 font-medium"
+                      className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all duration-300 font-medium group"
                     >
-                      Learn More <ArrowRight className="w-4 h-4" />
+                      Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
