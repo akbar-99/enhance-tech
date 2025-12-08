@@ -7,13 +7,14 @@ import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [visiblePosts, setVisiblePosts] = useState(6);
+  const [activeCategory, setActiveCategory] = useState("All");
   
   const posts = [
     {
       id: 1,
       title: "The Future of Cloud Computing in 2024",
       excerpt: "Explore the latest trends and innovations shaping the cloud computing landscape this year.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60",
+      image: "https://images.unsplash.com/photo-451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=60",
       author: "Tech Team",
       date: "Dec 5, 2024",
       readTime: "5 min read",
@@ -93,20 +94,35 @@ const Blog = () => {
 
   const categories = ["All", "Cloud", "Security", "Business", "AI", "Network", "Infrastructure"];
 
+  const filteredPosts = activeCategory === "All" 
+    ? posts 
+    : posts.filter(post => post.category === activeCategory);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Hero Section */}
       <section className="pt-32 pb-12 relative overflow-hidden">
+        {/* Animated Background Blobs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute top-1/4 left-1/4 w-[400px] h-[400px] blob opacity-25"
+            style={{ background: 'hsl(280 80% 55% / 0.3)' }}
+          />
+          <div 
+            className="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] blob opacity-20"
+            style={{ background: 'hsl(300 100% 65% / 0.3)', animationDelay: '-4s' }}
+          />
+        </div>
+        
         <div className="absolute inset-0 bg-grid opacity-20" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: 'radial-gradient(circle, hsl(280 80% 55% / 0.3) 0%, transparent 70%)' }} />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto fade-up">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-foreground">Tech </span>
-              <span className="gradient-text">Insights</span>
+              <span className="gradient-text neon-text">Insights</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl">
               Stay updated with the latest trends, tips, and insights in IT and technology.
@@ -122,7 +138,12 @@ const Blog = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 rounded-full glass-card text-sm font-medium text-foreground hover:bg-primary/20 transition-colors"
+                onClick={() => setActiveCategory(category)}
+                className={`px-4 py-2 rounded-full glass-card text-sm font-medium transition-all duration-300 ${
+                  activeCategory === category 
+                    ? 'bg-primary/20 text-primary neon-glow' 
+                    : 'text-foreground hover:bg-primary/10'
+                }`}
               >
                 {category}
               </button>
@@ -134,25 +155,27 @@ const Blog = () => {
       {/* Blog Grid */}
       <section className="py-12 relative">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {posts.slice(0, visiblePosts).map((post, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
+            {filteredPosts.slice(0, visiblePosts).map((post, index) => (
               <article 
                 key={post.id} 
-                className="glass-card overflow-hidden hover:scale-[1.02] transition-all duration-300 group"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="blog-card shine fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video overflow-hidden relative">
                   <img 
                     src={post.image} 
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 </div>
                 <div className="p-6">
-                  <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium mb-3">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3" 
+                    style={{ background: 'hsl(var(--primary) / 0.2)', color: 'hsl(var(--primary))' }}>
                     {post.category}
                   </span>
-                  <h3 className="text-xl font-bold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-foreground mb-2 line-clamp-2 hover:text-primary transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{post.excerpt}</p>
@@ -171,11 +194,11 @@ const Blog = () => {
             ))}
           </div>
           
-          {visiblePosts < posts.length && (
+          {visiblePosts < filteredPosts.length && (
             <div className="text-center mt-12">
               <button 
                 onClick={() => setVisiblePosts(prev => prev + 3)}
-                className="btn-primary inline-flex items-center gap-2"
+                className="btn-primary inline-flex items-center gap-2 text-primary-foreground"
               >
                 Load More <ArrowRight className="w-4 h-4" />
               </button>

@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingNav from "@/components/FloatingNav";
 import CTASection from "@/components/CTASection";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Products = () => {
@@ -67,14 +67,25 @@ const Products = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
+        {/* Animated Background Blobs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute bottom-1/4 left-1/4 w-[450px] h-[450px] blob opacity-25"
+            style={{ background: 'hsl(300 100% 65% / 0.3)' }}
+          />
+          <div 
+            className="absolute top-1/3 right-1/3 w-[350px] h-[350px] blob opacity-20"
+            style={{ background: 'hsl(280 80% 55% / 0.3)', animationDelay: '-5s' }}
+          />
+        </div>
+        
         <div className="absolute inset-0 bg-grid opacity-20" />
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: 'radial-gradient(circle, hsl(300 100% 65% / 0.3) 0%, transparent 70%)' }} />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto fade-up">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-foreground">Our </span>
-              <span className="gradient-text">Products</span>
+              <span className="gradient-text neon-text">Products</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl">
               Premium software and cloud solutions to power your business growth.
@@ -86,15 +97,16 @@ const Products = () => {
       {/* Products Grid */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger-children">
             {products.map((product, index) => (
               <div 
                 key={index} 
-                className={`glass-card p-8 hover:scale-[1.02] transition-all duration-300 relative ${product.popular ? 'ring-2 ring-primary' : ''}`}
+                className={`glass-card-3d p-8 shine fade-up relative ${product.popular ? 'animated-border' : ''}`}
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {product.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary rounded-full text-xs font-medium text-primary-foreground">
-                    Most Popular
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-medium text-primary-foreground flex items-center gap-1 neon-glow" style={{ background: 'var(--gradient-button)' }}>
+                    <Sparkles className="w-3 h-3" /> Most Popular
                   </div>
                 )}
                 
@@ -104,7 +116,9 @@ const Products = () => {
                 <ul className="space-y-3 mb-8">
                   {product.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3 text-foreground">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.2)' }}>
+                        <Check className="w-3 h-3 text-primary" />
+                      </div>
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
@@ -112,7 +126,7 @@ const Products = () => {
                 
                 <Link 
                   to="/contact" 
-                  className="btn-primary w-full flex items-center justify-center gap-2"
+                  className="btn-primary w-full flex items-center justify-center gap-2 text-primary-foreground"
                 >
                   Get Started <ArrowRight className="w-4 h-4" />
                 </Link>
