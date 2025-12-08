@@ -23,8 +23,69 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       
+      {/* Decorative Curved Border with Purple Orb */}
+      <div className="relative">
+        <div className="absolute inset-x-0 top-20 h-32 overflow-visible z-10">
+          {/* Curved black border */}
+          <div className="absolute inset-x-0 bottom-0 h-24">
+            <svg 
+              viewBox="0 0 1440 100" 
+              fill="none" 
+              className="w-full h-full"
+              preserveAspectRatio="none"
+            >
+              <path 
+                d="M0 100 L0 50 Q360 0 720 50 Q1080 100 1440 50 L1440 100 Z" 
+                fill="hsl(var(--background))"
+                stroke="url(#borderGradient)"
+                strokeWidth="2"
+              />
+              <defs>
+                <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(280 80% 55% / 0.3)" />
+                  <stop offset="50%" stopColor="hsl(300 100% 65%)" />
+                  <stop offset="100%" stopColor="hsl(280 80% 55% / 0.3)" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          
+          {/* Purple gradient orb */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-32 h-32 z-20">
+            <div className="relative w-full h-full">
+              {/* Outer glow */}
+              <div 
+                className="absolute inset-0 rounded-full blur-xl animate-pulse-glow"
+                style={{ background: 'radial-gradient(circle, hsl(300 100% 65% / 0.6) 0%, hsl(280 80% 55% / 0.3) 50%, transparent 70%)' }}
+              />
+              {/* Main orb */}
+              <div 
+                className="absolute inset-4 rounded-full"
+                style={{ 
+                  background: 'radial-gradient(circle at 30% 30%, hsl(300 100% 75%) 0%, hsl(280 80% 55%) 50%, hsl(260 70% 40%) 100%)',
+                  boxShadow: '0 0 40px hsl(300 100% 65% / 0.5), inset 0 0 20px hsl(300 100% 80% / 0.3)'
+                }}
+              />
+              {/* Inner highlight */}
+              <div 
+                className="absolute top-5 left-5 w-6 h-6 rounded-full opacity-60"
+                style={{ background: 'radial-gradient(circle, hsl(0 0% 100% / 0.8) 0%, transparent 70%)' }}
+              />
+              {/* Rotating arrow icon */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-white/80 text-xs font-medium animate-spin-slow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-48 pb-20 relative overflow-hidden">
         {/* Animated Background Blobs */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
