@@ -9,15 +9,15 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div 
           className="absolute top-1/4 left-1/4 w-[500px] h-[500px] blob opacity-30"
-          style={{ background: 'hsl(300 100% 65% / 0.3)' }}
+          style={{ background: 'hsl(210 100% 60% / 0.3)' }}
         />
         <div 
           className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] blob opacity-25"
-          style={{ background: 'hsl(280 80% 55% / 0.3)', animationDelay: '-4s' }}
+          style={{ background: 'hsl(200 80% 55% / 0.3)', animationDelay: '-4s' }}
         />
         <div 
           className="absolute top-1/2 right-1/3 w-[300px] h-[300px] blob opacity-20"
-          style={{ background: 'hsl(320 90% 60% / 0.3)', animationDelay: '-2s' }}
+          style={{ background: 'hsl(220 90% 60% / 0.3)', animationDelay: '-2s' }}
         />
       </div>
 
@@ -33,12 +33,12 @@ const HeroSection = () => {
             style={{
               width: `${4 + Math.random() * 8}px`,
               height: `${4 + Math.random() * 8}px`,
-              background: `hsl(${300 + Math.random() * 60} 80% 65% / ${0.3 + Math.random() * 0.4})`,
+              background: `hsl(${200 + Math.random() * 40} 80% 65% / ${0.3 + Math.random() * 0.4})`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 5}s`,
               animationDuration: `${3 + Math.random() * 4}s`,
-              boxShadow: `0 0 ${10 + Math.random() * 20}px hsl(300 100% 65% / 0.5)`,
+              boxShadow: `0 0 ${10 + Math.random() * 20}px hsl(210 100% 60% / 0.5)`,
             }}
           />
         ))}
@@ -81,7 +81,7 @@ const HeroSection = () => {
               />
               {/* Glowing ring effect */}
               <div className="absolute inset-0 rounded-full blur-3xl -z-10 animate-pulse-glow" 
-                style={{ background: 'radial-gradient(circle, hsl(300 100% 65% / 0.4) 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle, hsl(210 100% 60% / 0.4) 0%, transparent 70%)' }}
               />
               {/* Orbiting particles */}
               <div className="absolute inset-0 -z-10">
@@ -94,7 +94,7 @@ const HeroSection = () => {
                       left: '50%',
                       transform: `rotate(${i * 60}deg) translateX(180px)`,
                       animationDelay: `${i * 0.3}s`,
-                      boxShadow: '0 0 20px hsl(300 100% 65% / 0.8)',
+                      boxShadow: '0 0 20px hsl(210 100% 60% / 0.8)',
                     }}
                   />
                 ))}
