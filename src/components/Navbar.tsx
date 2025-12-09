@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +30,7 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
       <nav className="max-w-6xl mx-auto glass-nav flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
+          <img src={enhanceTechLogo} alt="Enhance Tech" className="h-10 w-auto" />
           <span className="text-xl font-bold text-foreground">Enhance</span>
           <span className="text-xl font-bold neon-text">Tech</span>
         </Link>
