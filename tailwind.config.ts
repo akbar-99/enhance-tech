@@ -53,7 +53,7 @@ export default {
         },
         "neon-blue": "hsl(var(--neon-blue))",
         "neon-cyan": "hsl(var(--neon-cyan))",
-        "dark-blue": "hsl(var(--dark-blue))",
+        "dark-charcoal": "hsl(var(--dark-charcoal))",
         "glass-bg": "hsl(var(--glass-bg))",
         "glass-border": "hsl(var(--glass-border))",
         sidebar: {
