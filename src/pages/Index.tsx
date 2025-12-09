@@ -10,24 +10,20 @@ import FAQSection from "@/components/FAQSection";
 import BlogSection from "@/components/BlogSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <main className="min-h-screen overflow-x-hidden">
+  return <main className="min-h-screen overflow-x-hidden">
       <Navbar />
       <HeroSection />
-      <PartnersSection />
-      <AboutSection />
-      <ServicesSection />
-      <IndustriesSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <BlogSection />
-      <CTASection />
-      <Footer />
+      <PartnersSection className="bg-primary-foreground" />
+      <AboutSection className="bg-primary-foreground" />
+      <ServicesSection className="bg-primary-foreground" />
+      <IndustriesSection className="bg-primary-foreground" />
+      <TestimonialsSection className="bg-primary-foreground" />
+      <FAQSection className="bg-primary-foreground" />
+      <BlogSection className="bg-primary-foreground" />
+      <CTASection className="bg-primary-foreground" />
+      <Footer className="bg-primary-foreground" />
       <FloatingNav />
-    </main>
-  );
+    </main>;
 };
-
 export default Index;
