@@ -1,5 +1,7 @@
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
+
 const Footer = () => {
   return <footer className="py-16 border-t border-border">
       <div className="container mx-auto px-4">
@@ -7,6 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-6">
+              <img src={enhanceTechLogo} alt="Enhance Tech" className="h-12 w-auto" />
               <span className="text-2xl font-bold text-foreground">Enhance</span>
               <span className="text-2xl font-bold neon-text">Tech</span>
             </div>
