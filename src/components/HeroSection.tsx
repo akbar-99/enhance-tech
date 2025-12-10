@@ -44,7 +44,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-muted-foreground text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-            Enhance Tech is a leading Information Technology Company. We are specialized in IT Infrastructure & Cloud Computing solutions and services.
+            ​ We Keep your systems running so your team can keep winning.  
           </p>
           
           <div className="flex flex-wrap items-center justify-center gap-4">
