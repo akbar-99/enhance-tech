@@ -1,7 +1,6 @@
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
-
 const Footer = () => {
   return <footer className="py-16 border-t border-border">
       <div className="container mx-auto px-4">
@@ -70,7 +69,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <a href="mailto:info@enhancetech.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">info@enhancetech.com</a>
+                <a href="mailto:info@enhancetech.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">info@itenhance.tech</a>
               </li>
             </ul>
           </div>
