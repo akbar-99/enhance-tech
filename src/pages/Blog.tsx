@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingNav from "@/components/FloatingNav";
@@ -6,8 +7,33 @@ import { Calendar, User, ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
+  const location = useLocation();
   const [visiblePosts, setVisiblePosts] = useState(6);
   const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    if (location.hash) {
+      const categoryMap: Record<string, string> = {
+        '#tech-news': 'Cloud',
+        '#industry-updates': 'Cloud',
+        '#product-releases': 'Cloud',
+        '#security-alerts': 'Security',
+        '#insights': 'Business',
+        '#case-studies': 'Business',
+        '#best-practices': 'Business',
+        '#how-to-guides': 'AI',
+        '#company': 'Infrastructure',
+        '#company-news': 'Infrastructure',
+        '#events': 'Network',
+        '#careers': 'Business'
+      };
+      
+      const category = categoryMap[location.hash];
+      if (category) {
+        setActiveCategory(category);
+      }
+    }
+  }, [location]);
   
   const posts = [
     {
@@ -104,15 +130,14 @@ const Blog = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-12 relative overflow-hidden">
-        {/* Animated Background Blobs */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
             className="absolute top-1/4 left-1/4 w-[400px] h-[400px] blob opacity-25"
-            style={{ background: 'hsl(280 80% 55% / 0.3)' }}
+            style={{ background: 'hsl(210 100% 50% / 0.3)' }}
           />
           <div 
             className="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] blob opacity-20"
-            style={{ background: 'hsl(300 100% 65% / 0.3)', animationDelay: '-4s' }}
+            style={{ background: 'hsl(200 100% 60% / 0.3)', animationDelay: '-4s' }}
           />
         </div>
         
@@ -132,7 +157,7 @@ const Blog = () => {
       </section>
 
       {/* Categories */}
-      <section className="py-8">
+      <section id="categories" className="py-8 scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
             {categories.map((category) => (
@@ -153,7 +178,7 @@ const Blog = () => {
       </section>
 
       {/* Blog Grid */}
-      <section className="py-12 relative">
+      <section id="posts" className="py-12 relative scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
             {filteredPosts.slice(0, visiblePosts).map((post, index) => (

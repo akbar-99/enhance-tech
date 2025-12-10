@@ -8,30 +8,30 @@ const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const itServices = [
-    { name: "Managed IT Services", icon: Monitor },
-    { name: "Server and Storage Solutions", icon: Server },
-    { name: "Network Solutions", icon: Network },
-    { name: "Software Solutions", icon: Code },
-    { name: "AWS Cloud Services", icon: Cloud },
-    { name: "Unified Communications", icon: Phone },
-    { name: "Procurement Services", icon: ShoppingCart },
-    { name: "Meeting Room Solutions", icon: Building },
-    { name: "Warehouse Solutions", icon: Building },
-    { name: "Maritime VSAT", icon: Anchor },
+    { name: "Managed IT Services", icon: Monitor, link: "/services#managed-it" },
+    { name: "Server and Storage Solutions", icon: Server, link: "/services#server-storage" },
+    { name: "Network Solutions", icon: Network, link: "/services#network" },
+    { name: "Software Solutions", icon: Code, link: "/services#software" },
+    { name: "AWS Cloud Services", icon: Cloud, link: "/services#aws-cloud" },
+    { name: "Unified Communications", icon: Phone, link: "/services#unified-communications" },
+    { name: "Procurement Services", icon: ShoppingCart, link: "/services#procurement" },
+    { name: "Meeting Room Solutions", icon: Building, link: "/services#meeting-room" },
+    { name: "Warehouse Solutions", icon: Building, link: "/services#warehouse" },
+    { name: "Maritime VSAT", icon: Anchor, link: "/services#maritime-vsat" },
   ];
 
   const cyberSecurityServices = [
-    { name: "Email Security", icon: Shield },
-    { name: "Web Security", icon: Globe },
-    { name: "End Point Security", icon: Smartphone },
+    { name: "Email Security", icon: Shield, link: "/services#email-security" },
+    { name: "Web Security", icon: Globe, link: "/services#web-security" },
+    { name: "End Point Security", icon: Smartphone, link: "/services#endpoint-security" },
   ];
 
   const digitalServices = [
-    { name: "Branding", icon: Palette },
-    { name: "Web Development", icon: Globe },
-    { name: "SEO Services", icon: Search },
-    { name: "Social Media Marketing", icon: Share2 },
-    { name: "Google Ads", icon: Target },
+    { name: "Branding", icon: Palette, link: "/services#branding" },
+    { name: "Web Development", icon: Globe, link: "/services#web-development" },
+    { name: "SEO Services", icon: Search, link: "/services#seo" },
+    { name: "Social Media Marketing", icon: Share2, link: "/services#social-media" },
+    { name: "Google Ads", icon: Target, link: "/services#google-ads" },
   ];
 
   const [productsOpen, setProductsOpen] = useState(false);
@@ -39,38 +39,38 @@ const Navbar = () => {
 
   const productCategories = {
     cloudSolutions: [
-      { name: "Microsoft 365", icon: Cloud },
-      { name: "Google Workspace", icon: Globe },
-      { name: "AWS Services", icon: Server },
-      { name: "Azure Solutions", icon: Cloud },
+      { name: "Microsoft 365", icon: Cloud, link: "/products#microsoft-365" },
+      { name: "Google Workspace", icon: Globe, link: "/products#google-workspace" },
+      { name: "AWS Services", icon: Server, link: "/products#aws-services" },
+      { name: "Azure Solutions", icon: Cloud, link: "/products#azure-solutions" },
     ],
     securityTools: [
-      { name: "Endpoint Protection", icon: Shield },
-      { name: "Firewall Solutions", icon: Shield },
-      { name: "Backup & Recovery", icon: Server },
+      { name: "Endpoint Protection", icon: Shield, link: "/products#endpoint-protection" },
+      { name: "Firewall Solutions", icon: Shield, link: "/products#firewall-solutions" },
+      { name: "Backup & Recovery", icon: Server, link: "/products#backup-recovery" },
     ],
     hardware: [
-      { name: "Servers & Storage", icon: Server },
-      { name: "Networking Equipment", icon: Network },
-      { name: "Workstations", icon: Monitor },
+      { name: "Servers & Storage", icon: Server, link: "/products#servers-storage" },
+      { name: "Networking Equipment", icon: Network, link: "/products#networking-equipment" },
+      { name: "Workstations", icon: Monitor, link: "/products#workstations" },
     ],
   };
 
   const blogCategories = {
     techNews: [
-      { name: "Industry Updates", icon: Globe },
-      { name: "Product Releases", icon: Monitor },
-      { name: "Security Alerts", icon: Shield },
+      { name: "Industry Updates", icon: Globe, link: "/blog#industry-updates" },
+      { name: "Product Releases", icon: Monitor, link: "/blog#product-releases" },
+      { name: "Security Alerts", icon: Shield, link: "/blog#security-alerts" },
     ],
     insights: [
-      { name: "Case Studies", icon: Code },
-      { name: "Best Practices", icon: Target },
-      { name: "How-To Guides", icon: Search },
+      { name: "Case Studies", icon: Code, link: "/blog#case-studies" },
+      { name: "Best Practices", icon: Target, link: "/blog#best-practices" },
+      { name: "How-To Guides", icon: Search, link: "/blog#how-to-guides" },
     ],
     company: [
-      { name: "Company News", icon: Building },
-      { name: "Events", icon: Phone },
-      { name: "Careers", icon: Share2 },
+      { name: "Company News", icon: Building, link: "/blog#company-news" },
+      { name: "Events", icon: Phone, link: "/blog#events" },
+      { name: "Careers", icon: Share2, link: "/blog#careers" },
     ],
   };
 
@@ -121,7 +121,7 @@ const Navbar = () => {
                     {itServices.map((service) => (
                       <Link
                         key={service.name}
-                        to="/services"
+                        to={service.link}
                         className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                       >
                         <service.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
@@ -142,7 +142,7 @@ const Navbar = () => {
                       {cyberSecurityServices.map((service) => (
                         <Link
                           key={service.name}
-                          to="/services"
+                          to={service.link}
                           className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                         >
                           <service.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
@@ -161,7 +161,7 @@ const Navbar = () => {
                       {digitalServices.map((service) => (
                         <Link
                           key={service.name}
-                          to="/services"
+                          to={service.link}
                           className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                         >
                           <service.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
@@ -196,7 +196,7 @@ const Navbar = () => {
                     {productCategories.cloudSolutions.map((item) => (
                       <Link
                         key={item.name}
-                        to="/products"
+                        to={item.link}
                         className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                       >
                         <item.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
@@ -216,7 +216,7 @@ const Navbar = () => {
                       {productCategories.securityTools.map((item) => (
                         <Link
                           key={item.name}
-                          to="/products"
+                          to={item.link}
                           className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                         >
                           <item.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
@@ -234,7 +234,7 @@ const Navbar = () => {
                       {productCategories.hardware.map((item) => (
                         <Link
                           key={item.name}
-                          to="/products"
+                          to={item.link}
                           className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                         >
                           <item.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
@@ -269,7 +269,7 @@ const Navbar = () => {
                     {blogCategories.techNews.map((item) => (
                       <Link
                         key={item.name}
-                        to="/blog"
+                        to={item.link}
                         className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                       >
                         <item.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
@@ -288,7 +288,7 @@ const Navbar = () => {
                     {blogCategories.insights.map((item) => (
                       <Link
                         key={item.name}
-                        to="/blog"
+                        to={item.link}
                         className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                       >
                         <item.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
@@ -307,7 +307,7 @@ const Navbar = () => {
                     {blogCategories.company.map((item) => (
                       <Link
                         key={item.name}
-                        to="/blog"
+                        to={item.link}
                         className="flex items-center gap-3 py-2 px-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-colors group"
                       >
                         <item.icon className="w-4 h-4 text-primary/70 group-hover:text-primary" />
