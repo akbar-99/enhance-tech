@@ -49,7 +49,7 @@ const HeroSection = () => {
           
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link to="/contact" className="btn-primary flex items-center gap-2 text-primary-foreground animated-border">
-              Book Now <ArrowRight className="w-5 h-5" />
+              ​Become a Partner  <ArrowRight className="w-5 h-5" />
             </Link>
             
             <button className="w-14 h-14 rounded-full glass-card flex items-center justify-center hover:neon-glow transition-all duration-300 group rotate-glow">
