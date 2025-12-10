@@ -38,9 +38,9 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16 fade-up">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-foreground">Simplifying Tech For</span>
+            <span className="text-foreground">​Empowered by Tech,  </span>
             <br />
-            <span className="gradient-text neon-text">Faster Solutions</span>
+            <span className="gradient-text neon-text">​driven by results </span>
           </h1>
           
           <p className="text-muted-foreground text-lg md:text-xl mb-10 max-w-2xl mx-auto">
