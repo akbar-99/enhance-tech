@@ -6,9 +6,7 @@ const AboutSection = () => {
           <span className="text-primary text-sm font-medium uppercase tracking-wider">about us</span>
         </div>
         
-        <h2 className="text-center section-title mb-6 text-secondary-foreground">
-          Stress Less ! results that meet your business needs
-        </h2>
+        <h2 className="text-center section-title mb-6 text-secondary-foreground">Stress Less ! We bring calm to IT Chaos</h2>
         
         <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16">
           Enhance Tech is a strategic technology partner, delivering enterprise-grade digital transformation and managed IT services to organizations worldwide.
