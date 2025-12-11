@@ -6,57 +6,114 @@ import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  Home, Phone, Users, MapPin, MessageSquare, 
-  Monitor, Shield, Server, Network, Code, Cloud, Headphones, ShoppingCart,
-  CheckCircle, Star
-} from "lucide-react";
+import { Home, Phone, Users, MapPin, MessageSquare, Monitor, Shield, Server, Network, Code, Cloud, Headphones, ShoppingCart, CheckCircle, Star } from "lucide-react";
 import techCamelMascot from "@/assets/tech-camel-mascot.png";
-
 const ITSupportQatar = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: "", email: "", mobile: "" });
+  const {
+    toast
+  } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: ""
+  });
   const [activeTab, setActiveTab] = useState(0);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Request Submitted!", description: "We'll contact you shortly." });
-    setFormData({ name: "", email: "", mobile: "" });
+    toast({
+      title: "Request Submitted!",
+      description: "We'll contact you shortly."
+    });
+    setFormData({
+      name: "",
+      email: "",
+      mobile: ""
+    });
   };
-
-  const tabs = [
-    { icon: Home, label: "Overview" },
-    { icon: Phone, label: "Contact" },
-    { icon: Users, label: "Team" },
-    { icon: MapPin, label: "Location" },
-    { icon: MessageSquare, label: "Support" },
-  ];
-
-  const services = [
-    { icon: Monitor, title: "Managed IT Services", description: "Premium Managed IT Services in Qatar. Proactive monitoring and 24/7 support.", link: "/services#managed-it" },
-    { icon: Shield, title: "Information Security Solutions", description: "Protect your Qatar business with world-class security solutions.", link: "/services#security-assessment" },
-    { icon: Server, title: "Server and Storage Solutions", description: "Enterprise server and storage systems for Qatar organizations.", link: "/services#data-protection" },
-    { icon: Network, title: "Network Solutions", description: "Advanced network solutions for Qatar's growing business landscape.", link: "/services#network-infrastructure" },
-    { icon: Code, title: "Software Solutions", description: "Custom software solutions for Qatar enterprises.", link: "/services#web-development" },
-    { icon: Cloud, title: "Cloud Services", description: "Comprehensive cloud services for Qatar businesses.", link: "/services#cloud-migration" },
-    { icon: Headphones, title: "Unified Communications", description: "Modern unified communications for Qatar organizations.", link: "/services#voip" },
-    { icon: ShoppingCart, title: "Procurement Services", description: "IT procurement and vendor management for Qatar.", link: "/services#it-procurement" },
-  ];
-
-  const features = [
-    { title: "We Cover All", description: "Our packages are comprehensive because it matters greatly to us that every customer is well looked after. We offer customized upgrades for your specific requirements." },
-    { title: "We Know You", description: "By getting to know your business inside out, our dedicated teams can offer strategic advice on which package is best suited to you." },
-    { title: "We Are You", description: "We become your fully managed IT Department and work with you to ensure the return from your technology investment is maximized." },
-  ];
-
-  const testimonials = [
-    { name: "Abdullah Al Thani", role: "CEO, Doha Investments", rating: 5, text: "Exceptional IT support services. They've transformed our technology infrastructure." },
-    { name: "Maryam Al Kuwari", role: "IT Director, Qatar Solutions", rating: 5, text: "Professional team with deep understanding of Qatar's business environment." },
-    { name: "Hamad Al Mansouri", role: "Operations Manager, Gulf Tech", rating: 5, text: "Reliable, responsive, and excellent value. Our go-to IT partner." },
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const tabs = [{
+    icon: Home,
+    label: "Overview"
+  }, {
+    icon: Phone,
+    label: "Contact"
+  }, {
+    icon: Users,
+    label: "Team"
+  }, {
+    icon: MapPin,
+    label: "Location"
+  }, {
+    icon: MessageSquare,
+    label: "Support"
+  }];
+  const services = [{
+    icon: Monitor,
+    title: "Managed IT Services",
+    description: "Premium Managed IT Services in Qatar. Proactive monitoring and 24/7 support.",
+    link: "/services#managed-it"
+  }, {
+    icon: Shield,
+    title: "Information Security Solutions",
+    description: "Protect your Qatar business with world-class security solutions.",
+    link: "/services#security-assessment"
+  }, {
+    icon: Server,
+    title: "Server and Storage Solutions",
+    description: "Enterprise server and storage systems for Qatar organizations.",
+    link: "/services#data-protection"
+  }, {
+    icon: Network,
+    title: "Network Solutions",
+    description: "Advanced network solutions for Qatar's growing business landscape.",
+    link: "/services#network-infrastructure"
+  }, {
+    icon: Code,
+    title: "Software Solutions",
+    description: "Custom software solutions for Qatar enterprises.",
+    link: "/services#web-development"
+  }, {
+    icon: Cloud,
+    title: "Cloud Services",
+    description: "Comprehensive cloud services for Qatar businesses.",
+    link: "/services#cloud-migration"
+  }, {
+    icon: Headphones,
+    title: "Unified Communications",
+    description: "Modern unified communications for Qatar organizations.",
+    link: "/services#voip"
+  }, {
+    icon: ShoppingCart,
+    title: "Procurement Services",
+    description: "IT procurement and vendor management for Qatar.",
+    link: "/services#it-procurement"
+  }];
+  const features = [{
+    title: "We Cover All",
+    description: "Our packages are comprehensive because it matters greatly to us that every customer is well looked after. We offer customized upgrades for your specific requirements."
+  }, {
+    title: "We Know You",
+    description: "By getting to know your business inside out, our dedicated teams can offer strategic advice on which package is best suited to you."
+  }, {
+    title: "We Are You",
+    description: "We become your fully managed IT Department and work with you to ensure the return from your technology investment is maximized."
+  }];
+  const testimonials = [{
+    name: "Abdullah Al Thani",
+    role: "CEO, Doha Investments",
+    rating: 5,
+    text: "Exceptional IT support services. They've transformed our technology infrastructure."
+  }, {
+    name: "Maryam Al Kuwari",
+    role: "IT Director, Qatar Solutions",
+    rating: 5,
+    text: "Professional team with deep understanding of Qatar's business environment."
+  }, {
+    name: "Hamad Al Mansouri",
+    role: "Operations Manager, Gulf Tech",
+    rating: 5,
+    text: "Reliable, responsive, and excellent value. Our go-to IT partner."
+  }];
+  return <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Hero Section */}
@@ -83,9 +140,18 @@ const ITSupportQatar = () => {
               <h2 className="text-2xl font-bold mb-6">Are You Looking For Best IT Support In Qatar?</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid md:grid-cols-3 gap-4">
-                  <Input placeholder="Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="bg-secondary/50 border-border" />
-                  <Input type="email" placeholder="Email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="bg-secondary/50 border-border" />
-                  <Input placeholder="Mobile No" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} className="bg-secondary/50 border-border" />
+                  <Input placeholder="Name" value={formData.name} onChange={e => setFormData({
+                  ...formData,
+                  name: e.target.value
+                })} className="bg-secondary/50 border-border" />
+                  <Input type="email" placeholder="Email" value={formData.email} onChange={e => setFormData({
+                  ...formData,
+                  email: e.target.value
+                })} className="bg-secondary/50 border-border" />
+                  <Input placeholder="Mobile No" value={formData.mobile} onChange={e => setFormData({
+                  ...formData,
+                  mobile: e.target.value
+                })} className="bg-secondary/50 border-border" />
                 </div>
                 <Button type="submit" className="w-full bg-primary hover:bg-primary/90">Submit</Button>
               </form>
@@ -93,15 +159,7 @@ const ITSupportQatar = () => {
           </div>
 
           {/* Tab Icons */}
-          <div className="flex justify-center mt-8">
-            <div className="glass-card-3d rounded-full px-6 py-3 flex gap-4">
-              {tabs.map((tab, index) => (
-                <button key={index} onClick={() => setActiveTab(index)} className={`p-3 rounded-full transition-all ${activeTab === index ? 'bg-primary text-primary-foreground' : 'hover:bg-secondary'}`}>
-                  <tab.icon className="w-5 h-5" />
-                </button>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </section>
 
@@ -127,15 +185,13 @@ const ITSupportQatar = () => {
             <h2 className="text-3xl md:text-4xl font-bold">Premium IT Solutions for Qatar</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {services.map((service, index) => (
-              <Link key={index} to={service.link} className="group">
+            {services.map((service, index) => <Link key={index} to={service.link} className="group">
                 <div className="glass-card-3d p-6 rounded-xl h-full hover:border-primary/50 transition-all">
                   <service.icon className="w-12 h-12 text-primary mb-4" />
                   <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{service.title}</h3>
                   <p className="text-muted-foreground text-sm">{service.description}</p>
                 </div>
-              </Link>
-            ))}
+              </Link>)}
           </div>
         </div>
       </section>
@@ -148,15 +204,13 @@ const ITSupportQatar = () => {
             <h2 className="text-3xl md:text-4xl font-bold">Why Choose Our IT Services?</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {features.map((feature, index) => (
-              <div key={index} className="text-center">
+            {features.map((feature, index) => <div key={index} className="text-center">
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -169,20 +223,16 @@ const ITSupportQatar = () => {
             <h2 className="text-3xl md:text-4xl font-bold">What Our Qatar Clients Say</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="glass-card-3d p-6 rounded-xl">
+            {testimonials.map((testimonial, index) => <div key={index} className="glass-card-3d p-6 rounded-xl">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
+                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
                 </div>
                 <p className="text-muted-foreground mb-4">"{testimonial.text}"</p>
                 <div>
                   <p className="font-semibold">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -205,8 +255,6 @@ const ITSupportQatar = () => {
 
       <Footer />
       <FloatingNav />
-    </div>
-  );
+    </div>;
 };
-
 export default ITSupportQatar;
