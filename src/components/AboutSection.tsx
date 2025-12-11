@@ -8,9 +8,7 @@ const AboutSection = () => {
         
         <h2 className="text-center section-title mb-6 text-secondary-foreground">Stress Less ! We bring calm to IT Chaos</h2>
         
-        <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16">
-          Enhance Tech is a strategic technology partner, delivering enterprise-grade digital transformation and managed IT services to organizations worldwide.
-        </p>
+        <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16">Our proactive monitoring prevents many issues before they become big problems. We help your team breathe easier, think more clearly, and get back on track fast. </p>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="value-card text-center">
