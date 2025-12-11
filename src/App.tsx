@@ -9,6 +9,15 @@ import Services from "./pages/Services";
 import Products from "./pages/Products";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import GetQuote from "./pages/GetQuote";
+import ITSupportDubai from "./pages/ITSupportDubai";
+import ITSupportSharjah from "./pages/ITSupportSharjah";
+import ITSupportAbuDhabi from "./pages/ITSupportAbuDhabi";
+import ITSupportQatar from "./pages/ITSupportQatar";
+import ITConsultingDubai from "./pages/ITConsultingDubai";
+import FAQs from "./pages/FAQs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +35,15 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/get-quote" element={<GetQuote />} />
+          <Route path="/it-support-dubai" element={<ITSupportDubai />} />
+          <Route path="/it-support-sharjah" element={<ITSupportSharjah />} />
+          <Route path="/it-support-abu-dhabi" element={<ITSupportAbuDhabi />} />
+          <Route path="/it-support-qatar" element={<ITSupportQatar />} />
+          <Route path="/it-consulting-dubai" element={<ITConsultingDubai />} />
+          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
