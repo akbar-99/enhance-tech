@@ -1,10 +1,8 @@
 import { MapPin, Phone, Mail, Linkedin, Instagram, Facebook, Youtube, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 import enhanceTechLogo from "@/assets/enhance-tech-logo.png";
-
 const Footer = () => {
-  return (
-    <footer className="py-16 border-t border-border">
+  return <footer className="py-16 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {/* Company Info */}
@@ -75,7 +73,7 @@ const Footer = () => {
             <h3 className="text-primary font-semibold mb-6 uppercase tracking-wider">Contact</h3>
             <ul className="space-y-4">
               <li>
-                <a className="text-muted-foreground hover:text-foreground transition-colors text-sm" href="tel:+971567215617">+971 567 215 617</a>
+                <a className="text-muted-foreground hover:text-foreground transition-colors text-sm" href="tel:+97143296840">+971 4 329 6840</a>
               </li>
               <li>
                 <a href="mailto:info@itenhance.tech" className="text-muted-foreground hover:text-foreground transition-colors text-sm">info@itenhance.tech</a>
@@ -97,8 +95,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
