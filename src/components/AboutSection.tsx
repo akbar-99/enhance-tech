@@ -3,7 +3,7 @@ const AboutSection = () => {
   return <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-4">
-          <span className="text-primary text-sm font-medium uppercase tracking-wider">about us</span>
+          <span className="text-primary text-sm font-medium uppercase tracking-wider">WELCOME TO ENHANCE TECH</span>
         </div>
         
         <h2 className="text-center section-title mb-6 text-secondary-foreground">Stress Less ! We bring calm to IT Chaos</h2>
