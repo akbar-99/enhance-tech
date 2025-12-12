@@ -47,14 +47,14 @@ const ServicesSection = () => {
     setVisibleServices(prev => Math.min(prev + 4, services.length));
   };
   return <section className="py-20">
-      <div className="container mx-auto px-4 bg-white">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-4">
           <span className="text-primary text-sm font-medium uppercase tracking-wider">BUILDING YOUR SUCCESS
 
         </span>
         </div>
         
-        <h2 className="text-center section-title mb-16 text-primary-foreground">IT Services That Drive Your Business Forward</h2>
+        <h2 className="text-center section-title mb-16">IT Services That Drive Your Business Forward</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {services.slice(0, visibleServices).map((service, index) => <div key={service.title} className="service-card group" style={{
