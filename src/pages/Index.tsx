@@ -15,12 +15,12 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <PartnersSection />
-      <AboutSection />
-      <ServicesSection />
-      <IndustriesSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <BlogSection />
+      <AboutSection className="border-secondary-foreground bg-white" />
+      <ServicesSection className="bg-white" />
+      <IndustriesSection className="bg-primary-foreground" />
+      <TestimonialsSection className="bg-primary-foreground" />
+      <FAQSection className="bg-primary-foreground" />
+      <BlogSection className="bg-primary-foreground" />
       <CTASection />
       <Footer />
       <FloatingNav />
