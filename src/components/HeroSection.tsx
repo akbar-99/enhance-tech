@@ -11,7 +11,7 @@ const useCases = [
   },
   {
     id: "discovery",
-    label: "Discovery and Classification",
+    label: "LACK OF IN-HOUSE IT EXPERTISE",
     title: "Find and Tag Any Sensitive Data",
     description: "Get visibility and control over structured and unstructured data.",
   },
