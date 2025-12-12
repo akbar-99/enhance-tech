@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        barlow: ['Barlow', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -56,6 +57,14 @@ export default {
         "dark-charcoal": "hsl(var(--dark-charcoal))",
         "glass-bg": "hsl(var(--glass-bg))",
         "glass-border": "hsl(var(--glass-border))",
+        "forcepoint-bg": "hsl(var(--forcepoint-bg))",
+        "forcepoint-tab-active": "hsl(var(--forcepoint-tab-active))",
+        "forcepoint-tab-hover": "hsl(var(--forcepoint-tab-hover))",
+        "forcepoint-border": "hsl(var(--forcepoint-border))",
+        "forcepoint-link": "hsl(var(--forcepoint-link))",
+        "forcepoint-cta": "hsl(var(--forcepoint-cta))",
+        "forcepoint-cta-hover": "hsl(var(--forcepoint-cta-hover))",
+        "forcepoint-cta-text": "hsl(var(--forcepoint-cta-text))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
