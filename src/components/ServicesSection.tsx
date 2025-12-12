@@ -49,7 +49,9 @@ const ServicesSection = () => {
   return <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-4">
-          <span className="text-primary text-sm font-medium uppercase tracking-wider">key Services</span>
+          <span className="text-primary text-sm font-medium uppercase tracking-wider">BUILDING YOUR SUCCESS
+
+        </span>
         </div>
         
         <h2 className="text-center section-title mb-16">IT Services That Drive Your Business Forward</h2>
