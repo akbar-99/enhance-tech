@@ -2,9 +2,7 @@ const partners = ["Microsoft", "AWS", "Google Cloud", "Cisco", "Dell", "HP", "VM
 const PartnersSection = () => {
   return <section className="py-16 overflow-hidden">
       <div className="container mx-auto px-4 mb-10">
-        <h2 className="text-center text-2xl md:text-3xl font-bold text-foreground">
-          We're proud to be certified by and partnered with industry leaders
-        </h2>
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-foreground">We are honored to be accredited partners of the industry’s most respected names</h2>
       </div>
       
       <div className="relative">
