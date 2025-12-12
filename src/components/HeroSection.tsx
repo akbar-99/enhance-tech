@@ -86,24 +86,26 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Use case tabs */}
-          <div className="space-y-4 max-w-sm">
+          <div className="space-y-1 max-w-sm">
             {useCases.map((useCase, index) => (
               <button
                 key={useCase.id}
                 onClick={() => setActiveUseCase(index)}
-                className={`w-full text-left px-5 py-4 rounded-xl transition-all duration-300 flex items-center justify-between group ${
+                className={`w-full text-left px-5 py-4 transition-all duration-300 flex items-center justify-between group ${
                   activeUseCase === index
-                    ? 'bg-forcepoint-tab-active border border-forcepoint-border'
-                    : 'bg-transparent hover:bg-forcepoint-tab-hover border border-transparent'
+                    ? 'bg-forcepoint-tab-active border border-forcepoint-border rounded-lg'
+                    : 'bg-transparent border border-transparent'
                 }`}
               >
-                <span className={`font-barlow text-sm font-medium ${
-                  activeUseCase === index ? 'text-foreground' : 'text-muted-foreground'
+                <span className={`font-barlow text-sm tracking-wide ${
+                  activeUseCase === index 
+                    ? 'text-foreground font-medium' 
+                    : 'text-muted-foreground/70 hover:text-muted-foreground font-normal'
                 }`}>
                   {useCase.label}
                 </span>
                 {activeUseCase === index && (
-                  <div className="w-5 h-5 rounded-full border-2 border-foreground/30 border-t-foreground animate-spin" />
+                  <div className="w-5 h-5 rounded-full border-2 border-muted-foreground/30 border-t-foreground animate-spin" />
                 )}
               </button>
             ))}
