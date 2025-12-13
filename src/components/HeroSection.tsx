@@ -24,7 +24,7 @@ const useCases = [{
 }];
 const HeroSection = () => {
   const [activeUseCase, setActiveUseCase] = useState(0);
-  return <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+  return <section className="relative min-h-[85vh] flex items-start pt-32 pb-16 overflow-hidden">
       {/* Dark gradient background - Forcepoint style */}
       <div className="absolute inset-0" style={{
       background: 'linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(215 30% 12%) 40%, hsl(210 25% 8%) 100%)'
