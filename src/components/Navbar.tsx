@@ -180,7 +180,7 @@ const Navbar = () => {
         </Link>
 
         {/* Navigation Pill */}
-        <nav className="hidden lg:flex items-center gap-1 px-2 py-2 rounded-full bg-secondary/80 backdrop-blur-md border border-border/30">
+        <nav className="hidden lg:flex items-center gap-1 px-2 py-2 bg-secondary/80 backdrop-blur-md border border-border/30 rounded-md">
           <Link to="/" className="px-4 py-2 text-primary hover:text-primary transition-colors text-sm font-medium rounded-full hover:bg-primary/10">
             Home
           </Link>
