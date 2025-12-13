@@ -14,7 +14,7 @@ const Index = () => {
   return <main className="min-h-screen overflow-x-hidden">
       <Navbar />
       <HeroSection />
-      <PartnersSection />
+      <PartnersSection className="my-[11px]" />
       <AboutSection />
       <ServicesSection />
       <IndustriesSection />

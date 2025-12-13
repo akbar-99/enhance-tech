@@ -26,9 +26,9 @@ const HeroSection = () => {
   const [activeUseCase, setActiveUseCase] = useState(0);
   return <section className="relative min-h-[85vh] flex items-start pt-32 pb-16 overflow-hidden">
       {/* Dark gradient background - Forcepoint style */}
-      <div className="absolute inset-0" style={{
+      <div style={{
       background: 'linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(215 30% 12%) 40%, hsl(210 25% 8%) 100%)'
-    }} />
+    }} className="absolute inset-0 my-0" />
 
       {/* 3D Geometric Animation Container */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full pointer-events-none overflow-hidden">
